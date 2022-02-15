@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//rotte autenticazione
 Auth::routes();
 
+//area privata - backoffice
 Route::get('/home', 'HomeController@index')->name('home');
