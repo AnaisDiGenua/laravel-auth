@@ -8,6 +8,9 @@
                 <div class="card-header">Lista posts</div>
 
                 <div class="card-body">
+                    <div class="mb-3">
+                        <a href="{{route("posts.create")}}"><button type="button" class="btn btn-info">aggiungi post</button></a>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>
