@@ -18,6 +18,16 @@
                         @endif
                     </div>
                     {{$post->content}}
+                    <div class="mt-5 d-flex">
+                        {{-- bottone modifica --}}
+                        <a href="{{route("posts.edit", $post->id)}}"><button type="button" class="btn btn-warning mr-2">modifica</button></a>
+                        {{-- bottone elimina --}}
+                        <form action="{{route("posts.destroy", $post->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger">elimina</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -33,6 +33,7 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        {{-- bottone crea --}}
                         <button type="submit" class="btn btn-primary">crea</button>
                     </form>
                 </div>

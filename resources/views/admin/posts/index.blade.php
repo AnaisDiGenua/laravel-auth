@@ -17,7 +17,10 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Slug</th>
-                                <th scope="col">Azioni</th>
+                                <th scope="col">Stato</th>
+                                <th scope="col">Azione</th>
+                                <th scope="col">Azione</th>
+                                <th scope="col">Azione</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,13 +29,23 @@
                                     <th >{{$post->id}}</th>
                                     <td>{{$post->title}}</td>
                                     <td>{{$post->slug}}</td>
+                                    <td class="text-center">
+                                        @if ($post->published)
+                                            <span class="badge badge-success">pubblicato</span>
+                                        @else
+                                            <span class="badge badge-secondary">bozza</span>
+                                        @endif
+                                    </td>
                                     <td>
+                                        {{-- bottone visualizza --}}
                                         <a href="{{route("posts.show", $post->id)}}"><button type="button" class="btn btn-primary">visualizza</button></a>
                                     </td>
                                     <td>
+                                        {{-- bottone modifica --}}
                                         <a href="{{route("posts.edit", $post->id)}}"><button type="button" class="btn btn-warning">modifica</button></a>
                                     </td>
                                     <td>
+                                        {{-- bottone elimina --}}
                                         <form action="{{route("posts.destroy", $post->id)}}" method="POST">
                                             @csrf
                                             @method("DELETE")
